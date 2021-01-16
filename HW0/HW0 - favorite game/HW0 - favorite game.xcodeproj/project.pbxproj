@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B10D01B25B2A766001D53C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B10D01A25B2A766001D53C3 /* main.cpp */; };
+		6B10D04325B2A821001D53C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B10D04225B2A821001D53C3 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6B10D01525B2A766001D53C3 /* CopyFiles */ = {
+		6B10D03D25B2A821001D53C3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6B10D01725B2A766001D53C3 /* HW0 - poem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "HW0 - poem"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B10D01A25B2A766001D53C3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6B10D03F25B2A821001D53C3 /* HW0 - favorite game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "HW0 - favorite game"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B10D04225B2A821001D53C3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6B10D01425B2A766001D53C3 /* Frameworks */ = {
+		6B10D03C25B2A821001D53C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,64 +38,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B10D00E25B2A766001D53C3 = {
+		6B10D03625B2A821001D53C3 = {
 			isa = PBXGroup;
 			children = (
-				6B10D01925B2A766001D53C3 /* HW0 - poem */,
-				6B10D01825B2A766001D53C3 /* Products */,
+				6B10D04125B2A821001D53C3 /* HW0 - favorite game */,
+				6B10D04025B2A821001D53C3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6B10D01825B2A766001D53C3 /* Products */ = {
+		6B10D04025B2A821001D53C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B10D01725B2A766001D53C3 /* HW0 - poem */,
+				6B10D03F25B2A821001D53C3 /* HW0 - favorite game */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B10D01925B2A766001D53C3 /* HW0 - poem */ = {
+		6B10D04125B2A821001D53C3 /* HW0 - favorite game */ = {
 			isa = PBXGroup;
 			children = (
-				6B10D01A25B2A766001D53C3 /* main.cpp */,
+				6B10D04225B2A821001D53C3 /* main.cpp */,
 			);
-			path = "HW0 - poem";
+			path = "HW0 - favorite game";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B10D01625B2A766001D53C3 /* HW0 - poem */ = {
+		6B10D03E25B2A821001D53C3 /* HW0 - favorite game */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B10D01E25B2A766001D53C3 /* Build configuration list for PBXNativeTarget "HW0 - poem" */;
+			buildConfigurationList = 6B10D04625B2A821001D53C3 /* Build configuration list for PBXNativeTarget "HW0 - favorite game" */;
 			buildPhases = (
-				6B10D01325B2A766001D53C3 /* Sources */,
-				6B10D01425B2A766001D53C3 /* Frameworks */,
-				6B10D01525B2A766001D53C3 /* CopyFiles */,
+				6B10D03B25B2A821001D53C3 /* Sources */,
+				6B10D03C25B2A821001D53C3 /* Frameworks */,
+				6B10D03D25B2A821001D53C3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "HW0 - poem";
-			productName = "HW0 - poem";
-			productReference = 6B10D01725B2A766001D53C3 /* HW0 - poem */;
+			name = "HW0 - favorite game";
+			productName = "HW0 - favorite game";
+			productReference = 6B10D03F25B2A821001D53C3 /* HW0 - favorite game */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6B10D00F25B2A766001D53C3 /* Project object */ = {
+		6B10D03725B2A821001D53C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					6B10D01625B2A766001D53C3 = {
+					6B10D03E25B2A821001D53C3 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
-			buildConfigurationList = 6B10D01225B2A766001D53C3 /* Build configuration list for PBXProject "HW0 - poem" */;
+			buildConfigurationList = 6B10D03A25B2A821001D53C3 /* Build configuration list for PBXProject "HW0 - favorite game" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -103,29 +103,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 6B10D00E25B2A766001D53C3;
-			productRefGroup = 6B10D01825B2A766001D53C3 /* Products */;
+			mainGroup = 6B10D03625B2A821001D53C3;
+			productRefGroup = 6B10D04025B2A821001D53C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B10D01625B2A766001D53C3 /* HW0 - poem */,
+				6B10D03E25B2A821001D53C3 /* HW0 - favorite game */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6B10D01325B2A766001D53C3 /* Sources */ = {
+		6B10D03B25B2A821001D53C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B10D01B25B2A766001D53C3 /* main.cpp in Sources */,
+				6B10D04325B2A821001D53C3 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6B10D01C25B2A766001D53C3 /* Debug */ = {
+		6B10D04425B2A821001D53C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -184,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		6B10D01D25B2A766001D53C3 /* Release */ = {
+		6B10D04525B2A821001D53C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,7 +236,7 @@
 			};
 			name = Release;
 		};
-		6B10D01F25B2A766001D53C3 /* Debug */ = {
+		6B10D04725B2A821001D53C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -244,7 +244,7 @@
 			};
 			name = Debug;
 		};
-		6B10D02025B2A766001D53C3 /* Release */ = {
+		6B10D04825B2A821001D53C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -255,25 +255,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6B10D01225B2A766001D53C3 /* Build configuration list for PBXProject "HW0 - poem" */ = {
+		6B10D03A25B2A821001D53C3 /* Build configuration list for PBXProject "HW0 - favorite game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B10D01C25B2A766001D53C3 /* Debug */,
-				6B10D01D25B2A766001D53C3 /* Release */,
+				6B10D04425B2A821001D53C3 /* Debug */,
+				6B10D04525B2A821001D53C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B10D01E25B2A766001D53C3 /* Build configuration list for PBXNativeTarget "HW0 - poem" */ = {
+		6B10D04625B2A821001D53C3 /* Build configuration list for PBXNativeTarget "HW0 - favorite game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B10D01F25B2A766001D53C3 /* Debug */,
-				6B10D02025B2A766001D53C3 /* Release */,
+				6B10D04725B2A821001D53C3 /* Debug */,
+				6B10D04825B2A821001D53C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6B10D00F25B2A766001D53C3 /* Project object */;
+	rootObject = 6B10D03725B2A821001D53C3 /* Project object */;
 }
