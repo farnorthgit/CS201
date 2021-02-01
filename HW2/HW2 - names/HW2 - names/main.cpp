@@ -28,6 +28,5 @@ void Inputnames(vector<string>&names) {
 int main() {
     vector<string> names;
     Inputnames(names);
-    cout << "Hello, World!\n";
     return 0;
 }
