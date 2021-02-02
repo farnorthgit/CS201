@@ -34,7 +34,14 @@ bool DoesNameExist(const string &nameToFind, const vector<string> &names) {
     return false;
 }
 
-// testing whether the Inputnames and DoesNameExist functions works
+// this function takes the list of names and prints them out
+void PrintNames(const vector<string>&names) {
+    cout << "This is the list of names that were entered." << endl;
+    for (int k=0; k<names.size(); k++)
+        cout << names.at(k) << endl;
+}
+
+// testing whether the Inputnames, DoesNameExist, and PrintNames functions works
 int main() {
     vector<string> names;
     Inputnames(names);
@@ -44,5 +51,6 @@ int main() {
     if (DoesNameExist(nameToFind, names) == true)
         cout << "Yes this name is on the list." << endl;
     else cout << "No this name is not on the list." << endl;
+    PrintNames(names);
     return 0;
 }
