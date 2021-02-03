@@ -41,6 +41,15 @@ void PrintNames(const vector<string>&names) {
         cout << names.at(k) << endl;
 }
 
+// this function prints the number of characters in each string of the vector
+void PrintStringLength(const vector<string>&names) {
+    string name;
+    for (int m=0; m<names.size(); m++) {
+        name = names.at(m);
+        cout << names.at(m) << " is " << name.length() << " characters long" << endl;
+    }
+}
+
 // testing whether the Inputnames, DoesNameExist, and PrintNames functions works
 int main() {
     vector<string> names;
@@ -52,5 +61,6 @@ int main() {
         cout << "Yes this name is on the list." << endl;
     else cout << "No this name is not on the list." << endl;
     PrintNames(names);
+    PrintStringLength(names);
     return 0;
 }
