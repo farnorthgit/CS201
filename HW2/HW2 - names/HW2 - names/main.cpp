@@ -50,7 +50,7 @@ void PrintStringLength(const vector<string>&names) {
     }
 }
 
-// testing whether the Inputnames, DoesNameExist, and PrintNames functions works
+// testing whether the Inputnames, DoesNameExist, and PrintNames functions work
 int main() {
     vector<string> names;
     Inputnames(names);
