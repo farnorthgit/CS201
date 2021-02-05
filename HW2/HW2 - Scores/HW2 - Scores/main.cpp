@@ -18,9 +18,9 @@ void InputNamesScores(vector<string>&names, vector<int>&scores) {
     int score = 0;
     bool exists = false;
     while (true) {
-        cout << "Enter name: ";
+        cout << "Enter name (NoName to exit): ";
         cin >> name;
-        cout << "Enter score: ";
+        cout << "Enter score (0 to exit): ";
         cin >> score;
         if (name == "NoName") {
             if (score == 0)
@@ -51,24 +51,58 @@ void PrintNamesScores(const vector<string>&names, const vector<int>&scores) {
     
 // function to search for a name and print the corresponding score or "name not found"
 void SearchNamePrintScore (const vector<string>&names, const vector<int>&scores) {
+    bool nameexists = false;
+    string nametofind;
+    cout << "Enter a name to find: ";
+    cin >> nametofind;
     for (int k=0; k<names.size(); k++) {
-        if (nameToFind == names.at(k)) {
-            return true;
+        if (nametofind == names.at(k)) {
+            cout << "Corresponding score is: " << scores.at(k) << endl;
+            nameexists = true;
             break;
         }
     }
-    return false;
+    if (nameexists == false) cout << "name not found" << endl;
 }
 
 // function to search for a score and print the corresponding name or "score not found"
+void SearchScorePrintName (const vector<string>&names, const vector<int>&scores) {
+    bool scoreexists = false;
+    int scoretofind;
+    cout << "Enter a score to find: ";
+    cin >> scoretofind;
+    for (int m=0; m<scores.size(); m++) {
+        if (scoretofind == scores.at(m)) {
+            cout << "Corresponding name is: " << names.at(m) << endl;
+            scoreexists = true;
+            break;
+        }
+    }
+    if (scoreexists == false) cout << "score not found" << endl;
+}
 
 // main program to test the functions and use them to meet homework requirements
 
     int main() {
-    vector<string> names;
-    vector<int> scores;
-    InputNamesScores(names, scores);
-    PrintNamesScores(names, scores);
-    switch (
+        vector<string> names;
+        vector<int> scores;
+        InputNamesScores(names, scores);
+        PrintNamesScores(names, scores);
+        int x = 1;
+        while (x) {
+            cout << "Enter 1 to names/scores, 2 to print all names/scores, 3 to search for a name and print the corresponding score, 4 to search for a score and print the corresponding name, or 5 to quit" << endl;
+            cin >> x;
+            if (x == 5) break;
+            switch (x) {
+                case 1: InputNamesScores(names, scores);
+                    break;
+                case 2: PrintNamesScores(names, scores);
+                    break;
+                case 3: SearchNamePrintScore(names, scores);
+                    break;
+                case 4: SearchScorePrintName(names, scores);
+                    break;
+            }
+        }
     return 0;
 }
