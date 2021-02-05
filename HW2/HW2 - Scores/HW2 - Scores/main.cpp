@@ -50,6 +50,15 @@ void PrintNamesScores(const vector<string>&names, const vector<int>&scores) {
 }
     
 // function to search for a name and print the corresponding score or "name not found"
+void SearchNamePrintScore (const vector<string>&names, const vector<int>&scores) {
+    for (int k=0; k<names.size(); k++) {
+        if (nameToFind == names.at(k)) {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
 
 // function to search for a score and print the corresponding name or "score not found"
 
@@ -60,5 +69,6 @@ void PrintNamesScores(const vector<string>&names, const vector<int>&scores) {
     vector<int> scores;
     InputNamesScores(names, scores);
     PrintNamesScores(names, scores);
+    switch (
     return 0;
 }
