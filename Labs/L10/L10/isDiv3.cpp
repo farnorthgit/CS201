@@ -6,7 +6,5 @@
 #include "isDiv3.hpp"
 
 bool isDiv3 (int a) {
-    if (a%3==0)
-        return true;
-    else return false;
+    return (a%3==0);
 }
