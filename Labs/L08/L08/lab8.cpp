@@ -3,7 +3,7 @@
 //  L08
 //
 //  Created by Mark Billingsley on 2/4/21.
-//
+//  Creating the two required functions in this .cpp file.  These functions are called (via header file) by the main program.
 
 #include <stdio.h>
 #include "intio.hpp"

@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mcbillingsley/Desktop/c++ files/CS201/Labs/L07/L07/intio.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/mcbillingsley/Desktop/c++ files/CS201/Labs/L07/L07/intio.hpp">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
