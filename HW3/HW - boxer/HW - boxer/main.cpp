@@ -3,9 +3,9 @@
 //  Created by Mark Billingsley on 2/10/21.
 //
 
-#include <iostream>
-#include <string>
-#include "buildbox.hpp"
+#include<iostream>
+#include<string>
+#include"buildbox.hpp"
 using std::cin;
 using std::cout;
 using std::string;
