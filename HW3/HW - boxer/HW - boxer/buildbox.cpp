@@ -9,7 +9,7 @@ using std::cout;
 using std::endl;
 
 // function called by buildbox function below
-// print the top rows full of asterisks
+// print the top and bottol rows full of asterisks
 void ribbon (std::string word, int size) {
     for (int i=0; i<size; i++) {
         for (int j=0; j<(word.size() + 2 + (2*size)); j++)

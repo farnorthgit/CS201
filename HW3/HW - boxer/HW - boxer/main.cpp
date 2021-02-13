@@ -13,7 +13,7 @@ using std::string;
 int main() {
     int numlayers = 1;
     string message;
-// run continously unless break inside while loop is triggered
+// run continously until triggering the break inside the while loop
     while (true) {
         cout << "Enter box size, or enter 0 to quit: ";
         cin >> numlayers;
