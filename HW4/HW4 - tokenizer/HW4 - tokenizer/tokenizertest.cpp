@@ -1,7 +1,8 @@
 //  main.cpp
 //  HW4 - tokenizer
 //  Created by Mark Billingsley on 2/24/21.
-//
+//  Create a tokenizer program to read in lines of text, convert to vector of tokens of type string,
+//    and then analyze and print token types
 
 #include <iostream>
 using std::cout;
@@ -13,27 +14,21 @@ using std::vector;
 #include "tokenizer.hpp"
 
 int main() {
-// repeat this until hit break, which occurs when user enter "end"
+    string str;
+    vector<string> tokens;
+    cout << "Please type in some text. When you are done, type \" End\", \"end\", or \"END\":" << endl;
+// repeatedly collect lines of text until hit break, which occurs when user enters end or End or END
     while (true) {
-// this section has the initial prompt and then the call to readline to gather input
-        string str;
-        cout << "Please type in some text. When you are done, type \" End\", \"end\", or \"END\":" << endl;
-        if (ReadLine(str)) {
-            cout << "function returned positive" << endl;
-            cout << str << endl;
-        }
-            else cout << "function returned negative";
-// this section calls stringtotokens to place each element of str into vector tokens
-        vector<string> tokens;
-        cout << StringToTokensWS(str, tokens) << endl;
-        for (auto n : tokens) {
-            cout << n << endl;
-        }
-        int test = tokens.size();
-        if (tokens.at(test-1) == "End" ||
-            tokens.at(test-1) == "end" ||
-            tokens.at(test-1) == "END")
+// call readline to gather input
+        ReadLine(str);
+// then call stringtotokens function to place each element of str into vector tokens
+        int test = (StringToTokensWS(str, tokens)) - 1;
+        if ((tokens.at(test) == "End") ||
+            (tokens.at(test) == "end") ||
+            (tokens.at(test) == "END"))
             break;
     }
+// after done collecting lines of text and converting to tokens, analyze all the tokens
+    AnalyzeTokens (tokens);
     return 0;
 }
