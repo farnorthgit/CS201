@@ -15,10 +15,15 @@ using std::string;
 
 int main() {
     int num = 0;
+//initialized per hw instructions
     vector<string> v {"69", "69a", "a69", "5.6", "    68", "\t11", "68 69", "0xA"};
+//range-based for loop
     for (auto n : v) {
+//call function in source file and send it string n and num to be passed back
+//also if return false then tell user the error message
         if (!squarestring(n, num))
-            cout << "you did not input an integer" << endl;
+            cout << "You did not input an integer." << endl;
+//else output the square root
         else cout << num << endl;
     }
     return 0;
