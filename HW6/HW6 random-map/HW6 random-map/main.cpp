@@ -10,19 +10,23 @@
 #include <cmath>
 
 //  int RandomBetweenU(intfirst,intlast) returns a uniform random number between first and last, inclusively (e.g. 1 and 6 returns numbers between 1 and 6).  Use the <random> header and std::map<int,int> to simulate a histogram
-int RandomBetweenU(int first,int last) {
-}
+//int RandomBetweenU(int first,int last) {
+//}
 
 //  int RandomBetweenN(intfirst,intlast) which returns a normally distributed random number between first and last, inclusively (e.g. 1 and 6 returns numbers between 1 and 6).  Use the <random> header and std::map<int,int> to simulate a histogram
-int RandomBetweenN(int first,int last) {
-}
+//int RandomBetweenN(int first,int last) {
+//}
 
 //  int RandomBetween(intfirst,intlast) which returns numbers using the rand() function from the C standard library <stdlib.h>
-int RandomBetween(int first,int last) {
-}
+//int RandomBetween(int first,int last) {
+//}
 
-//  void PrintDistribution(conststd::map<int,int>&numbers) which prints a list (similar to the sample code above) of the random numbers clearly show they are normally or uniformly distributed
-void PrintDistribution(conststd::map<int,int>&numbers) {
+//  void PrintDistribution(conststd::map<int,int>&numbers) which prints a list (similar to the sample code above) of the random numbers clearly showing they are normally or uniformly distributed -- or distributed using the rand function
+void PrintDistribution(const std::map<int,int>&numbers) {
+    for (auto p : numbers) {
+        std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+                  << p.first << ' ' << std::string(p.second/200, '*') << '\n';
+    }
 }
 
 int main() {
@@ -53,17 +57,13 @@ int main() {
 
 //  Compare all three random number generators and print their histogram
     std::cout << "Normal distribution around " << mean << ":\n";
-    for (auto p : histnormal) {
-        std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-                  << p.first << ' ' << std::string(p.second/200, '*') << '\n';
-    }
+    PrintDistribution(histnormal);
     std::cout << std::endl;
 
     std::cout << "Uniform distribution:\n";
-    for (auto p : histuniform) {
-        std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-                  << p.first << ' ' << std::string(p.second/200, '*') << '\n';
-    }
+    PrintDistribution(histuniform);
+    std::cout << std::endl;
+
 
     return 0;
 }
