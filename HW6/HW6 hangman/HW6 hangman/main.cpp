@@ -8,6 +8,11 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
+#include <map>
+using std::map;
+#include <string>
+using std::string;
 
 void drawHangMan (int x) {
     cout << "   _____\n";
@@ -83,18 +88,32 @@ void drawHangMan (int x) {
     cout << "  :\n";
     cout << "__:__\n";
 }
-int main() {
-    drawHangMan (0);
-    drawHangMan (1);
-    drawHangMan (2);
-    drawHangMan (3);
-    drawHangMan (4);
-    drawHangMan (5);
-    drawHangMan (6);
-    drawHangMan (7);
-    drawHangMan (8);
-    drawHangMan (9);
-    drawHangMan (10);
 
+void printPuzzle (const map<string, bool> &answer) {
+    for (const auto [k, v] : answer)
+        if (v == false)
+            cout << " _ ";
+        else cout << " " << k << " ";
+    
+}
+
+
+int main() {
+    map<string, bool> guessed;
+    map<string, bool> solution;
+    solution["w"] = solution["a"] = solution["l"] = solution["r"] = solution["u"] = solution["s"] = false;
+    int wrongguesses = 0;
+    string currentguess;
+    
+    drawHangMan(wrongguesses);
+    printPuzzle(solution);
+    cout << "Guess a letter: ";
+    cin >> currentguess;
+    if (solution.count(currentguess) != 0) {
+        solution[currentguess] = true;
+        guessed[currentguess] = true;
+    }
+    
+    
     return 0;
 }
