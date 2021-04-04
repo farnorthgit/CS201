@@ -19,7 +19,8 @@ int mean = uniform_dist_for_mean(e1);
 std::seed_seq seed2{r(), r(), r(), r(), r(), r(), r(), r()};
 std::mt19937 e2(seed2);
 std::normal_distribution<> normal_dist(mean, 2);
-// this is needed for rand number generation
+
+
 
 
 //  int RandomBetweenU(intfirst,intlast) returns a uniform random number between first and last, inclusively (e.g. 1 and 6 returns numbers between 1 and 6).
@@ -27,8 +28,6 @@ int RandomBetweenU(int first,int last) {
     std::uniform_int_distribution<int> uniform_dist(first, last);
     return std::round(uniform_dist(e1));
 }
-
-
 
 //  int RandomBetweenN(intfirst,intlast) which returns a normally distributed random number between first and last, inclusively (e.g. 1 and 6 returns numbers between 1 and 6).
 int RandomBetweenN(int first,int last) {
@@ -60,7 +59,7 @@ int main() {
 // Generate a uniform distribution.  Use the <random> header and std::map<int,int> to simulate a histogram
     std::map<int, int> histuniform;
     for (int n = 0; n < 10000; n++) {
-        ++histuniform[RandomBetweenU(1, 12)];
+        ++histuniform[RandomBetweenU(1, 6)];
     }
 
 // Generate a rand distribution.  Use the <random> header and std::map<int,int> to simulate a histogram
