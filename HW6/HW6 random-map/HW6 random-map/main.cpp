@@ -1,6 +1,7 @@
 //  main.cpp
 //  HW6 random-map
 //  Created by Mark Billingsley on 4/2/21.
+//  Create functions to generate random numbers in uniform, normal, and rand distributions.  Then print the distributions using a histogram.
 
 #include <iostream>
 #include <iomanip>
