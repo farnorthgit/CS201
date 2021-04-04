@@ -1,6 +1,7 @@
 //  main.cpp
 //  HW6 shopping
 //  Created by Mark Billingsley on 4/3/21.
+//  Program to create an inventory and an empty shopping cart.  Let user add and remove items from inventory/to cart.  Calculate total cost of items in shopping cart.
 
 #include <iostream>
 using std::cout;
@@ -15,10 +16,10 @@ using std::vector;
 #include <numeric>
 using std::accumulate;
 
+// setup structure
 struct Record {double unitprice; int units;};
-map<string, Record> shopcart;
-map<string, Record> inventory;
 
+// function to print entire inventory with prices
 void printInventory (const map<string, Record> &localinv) {
     for (const auto &p : localinv) {
         cout << "Item: " << p.first << ", ";
@@ -52,7 +53,7 @@ void addToCart (map<string, Record> &localinv, map<string, Record> &localcart) {
 //  loop until user chooses an item quantity that is available
     int qtytoadd;
     while (true) {
-        cout << "How much of " << itemtoadd << " would you like to add to cart? ";
+        cout << "How many " << itemtoadd << " would you like to add to cart? ";
         cin >> qtytoadd;
         if (localinv.at(itemtoadd).units >= qtytoadd)
             break;
@@ -64,7 +65,39 @@ void addToCart (map<string, Record> &localinv, map<string, Record> &localcart) {
     cout << "Done: " << qtytoadd << " " << itemtoadd << " added to your cart." << endl;
 }
 
+// function to remove items from cart
+void removeFromCart (map<string, Record> &localinv, map<string, Record> &localcart) {
+//  loop until user chooses to remove from cart an item that actually exists in qty>0
+    string itemtoremove;
+    while (true) {
+        cout << "Which item would you like to remove? ";
+        cin >> itemtoremove;
+        if (localcart.count(itemtoremove) != 1)
+            cout << "Item does not exist in shopping cart.  Chose a different item." << endl;
+        else if (localcart.at(itemtoremove).units == 0)
+            cout << "You don't have any " << itemtoremove << " in your cart." << endl;
+            else break;
+    }
+//  loop until user chooses an item quantity that is available
+    int qtytoremove;
+    while (true) {
+        cout << "How many " << itemtoremove << " would you like to remove from cart? ";
+        cin >> qtytoremove;
+        if (localcart.at(itemtoremove).units >= qtytoremove)
+            break;
+        cout << "You've don't have that many " << itemtoremove << " in cart.  Try again." << endl;
+    }
+//  modify shopping cart and inventory accordingly
+    localinv.at(itemtoremove).units = localinv.at(itemtoremove).units + qtytoremove;
+    localcart.at(itemtoremove).units = localcart.at(itemtoremove).units - qtytoremove;
+    cout << "Done: " << qtytoremove << " " << itemtoremove << " removed from your cart." << endl;
+}
+
 int main() {
+    map<string, Record> shopcart;
+    map<string, Record> inventory;
+
+    // initiate variables
     inventory["dolls"] = {14.99, 10};
     inventory["trains"] = {29.99, 10};
     inventory["balls"] = {7.99, 10};
@@ -77,6 +110,7 @@ int main() {
     shopcart["skis"] = {99.99, 0};
     shopcart["books"] = {4.99, 0};
 
+// while loop and switch to let user shop (add/remove/view cart) for as long as they'd like
     int x;
     while (true) {
         cout << "--------------------------\n" << "CURRENT INVENTORY:" << endl;
@@ -92,6 +126,9 @@ int main() {
                 break;
             case 2:
                 addToCart (inventory, shopcart);
+                break;
+            case 3:
+                removeFromCart (inventory, shopcart);
                 break;
         }
     }
