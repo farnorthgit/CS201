@@ -21,9 +21,9 @@ using std::shuffle;
 
 int main() {
     random_device rd;
+    mt19937 gen(rd());
 //  Modify your program from part 1 so that it always produces the  same coin flips each time it is run.
-//  mt19937 gen(rd());
-    mt19937 gen(7);
+//  mt19937 gen(7);
     uniform_int_distribution <int> distrib (0, 1);
     int heads = 0;
     int tails = 0;
