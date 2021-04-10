@@ -103,7 +103,7 @@ int main() {
 // guessed holds the letters guessed - regardless of whether right or wrong
     map<string, bool> guessed;
 // solution holds the puzzle solution
-    string solution = "walrus";
+    string solution = "alaska";
 // puzzle starts with underscores that'll get replaced by letters once they're guessed
     string puzzle = "______";
 // wrongguesses counts the number of incorrect guesses
@@ -143,13 +143,19 @@ int main() {
             int counter = 0;
 // initiate bool to keep track of whether currentguess exists in solution
             bool exists = false;
+// for each letter of solution...
             for_each (solution.begin(), solution.end(), [&] (auto n) {
+// ...if it matches currentguess
                 if (currentguesschar == n) {
+    // then replace the corresonding underscore in puzzle with currentguess
                     puzzle.replace(counter, 1, currentguess);
+    // and indicate that currentguess was correct
                     exists = true;
                 }
+// ...and increase counter
                 counter++;
             });
+// if the guess was not correct, then increase wrongguess counter
             if (exists == false) wrongguesses++;
         }
     }
