@@ -11,13 +11,12 @@ using std::endl;
 #include <vector>
 using std::vector;
 #include <cmath>
+#include <numeric>
+using std::accumulate;
 #include <iomanip>
-#include <random>
-using std::mt19937;
-std::mt19937 seed(1);
-using std::uniform_int_distribution;
 #include <stdio.h>
 #include <time.h>
+#include "gendist.hpp"
 
 int count;
 
@@ -96,48 +95,38 @@ void quickSortLast (vector<int> &vv, int low, int high) {
 }
 
 void sortAndCheck(vector<int> testvv) {
-    clock_t timer = clock();
-    quickSortLast(testvv, 0, testvv.size()-1);
-    timer = clock() - timer;
-    cout << "Sorted in approx " << (float) timer / CLOCKS_PER_SEC << " second." << endl;
-    checkCorrectSort(testvv);
-    cout << endl;
 }
 
 int main() {
-// GENERATE THE 6 RANDOM DISTRIBUTIONS OF DIFFERENT TYPES AND SIZES
-// generate a small normal distribution with stddev 250 and mean 500
-    vector<int> vnormsmall;
-    std::normal_distribution<> normal_dist{500, 250};
-    for (int n = 0; n < 100'000; n++) {
-        vnormsmall.push_back(std::round(normal_dist(seed)));
+    vector<int> vv;
+    for (auto i = 0; i < 6; i++) {
+        vector<float> vtimes;
+        for (auto j = 0; j < 10; j++) {
+            if (i == 0) generatenorm(vv, 100'000);
+            if (i == 1) generateuniform(vv, 100'000);
+            if (i == 2) generaterand(vv, 100'000);
+            if (i == 3) generatenorm(vv, 1'000'000);
+            if (i == 4) generateuniform(vv, 1'000'000);
+            if (i == 5) generaterand(vv, 1'000'000);
+            vverify = vv;
+            clock_t timer = clock();
+            quickSortLast(vv, 0, vv.size()-1);
+            timer = clock() - timer;
+            vtimes.push_back((float) timer / CLOCKS_PER_SEC);
+            checkCorrectSort(vv);
+        }
+        cout << (accumulate(vtimes.begin(), vtimes.end(), 0) / vtimes.size());
+        cout << " is average time to run quicksortlast on a ";
+        if (i == 0) cout << " small normal distribution." << endl;
+        if (i == 1) cout << " small uniform distribution." << endl;
+        if (i == 2) cout << " small rand distribution." << endl;
+        if (i == 3) cout << " large normal distribution." << endl;
+        if (i == 4) cout << " large uniform distribution." << endl;
+        if (i == 5) cout << " large rand distribution." << endl;
+        }
+
     }
-// generate a small uniform distribution between 0 and 1000
-    vector<int> vuniformsmall;
-    std::uniform_int_distribution<int> uniform_dist(0, 1000);
-    for (int n = 0; n < 100'000; n++) {
-        vuniformsmall.push_back(std::round(uniform_dist(seed)));
-    }
-// generate a small rand distribution between 0 and 1000
-    vector<int> vrandsmall;
-    for (int n = 0; n < 100'000; n++) {
-        vrandsmall.push_back(std::rand()/((RAND_MAX + 1U)/(999)));
-    }
-// generate a large normal distribution with stddev 250 and mean 500
-    vector<int> vnormlarge;
-    for (int n = 0; n < 1'000'000; n++) {
-        vnormlarge.push_back(std::round(normal_dist(seed)));
-    }
-// generate a large uniform distribution between 0 and 1000
-    vector<int> vuniformlarge;
-    for (int n = 0; n < 1'000'000; n++) {
-        vuniformlarge.push_back(std::round(uniform_dist(seed)));
-    }
-// generate a large rand distribution between 0 and 1000
-    vector<int> vrandlarge;
-    for (int n = 0; n < 1'000'000; n++) {
-        vrandlarge.push_back(std::rand()/((RAND_MAX + 1U)/(999)));
-    }
+
 
 
 // sort and check each distribution
