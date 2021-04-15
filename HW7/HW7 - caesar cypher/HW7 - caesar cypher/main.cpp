@@ -8,8 +8,14 @@ using std::cout;
 using std::endl;
 using std::cin;
 using std::string;
+#include <string>
+using std::stoi;
 
 int main() {
+// initiate variables
+    string shift;
+    bool digitcheck;
+    int shiftint;
 // introductory message
     cout << "This program encrypt/decrypt an input string based on an input integer." << endl << endl;
 // infinite loop until user enters 0
@@ -23,40 +29,39 @@ int main() {
                 return 0;
         } while (input == "");
 // loop until valid integer is entered
-        string shift;
         do {
+// set / reset digitcheck to true
+            digitcheck = true;
             cout << "Input a positive integer to use as the shift size: ";
             getline (cin, shift);
-// cycle through each element of string to check whether a digit
-            bool digitcheck = true;
+// cycle through each element of string to check whether its a digit
             for (auto i = 0; i < shift.size(); i++) {
                 if (!isdigit(shift[i])) {
                     digitcheck = false;
                     break;
                 }
             }
-// turn string shift into an int if digitcheck is true
+// turn string into int if digitcheck is true
             if (digitcheck)
-                
+                shiftint = stoi(shift);
 // loop back if not an integer or int is less than 0
-        } while ((!digitcheck) || (shift < 0));
-// turn shift string into an int
+        } while ((!digitcheck) || (shiftint < 0));
 // reduce the shift in case it exceeds 26
-        shift = shift % 26;
+        shiftint = shiftint % 26;
 // cycle through each character in the string
         for (auto n : input) {
 // if uppercase, then shift, wrap if > Z, and print
             if (n >= 65 && n <= 90) {
-                if ((shift + n) > 90)
-                    shift -= 26;
-                n += shift;
+                if ((shiftint + n) > 90)
+                    shiftint -= 26;
+                n += shiftint;
                 cout << n;
             }
 // else if lowercase, then shift, wrap if > z, and print
             else if (n >= 97 && n <= 122) {
-                if ((shift + n) > 122)
-                    shift -= 26;
-                n += shift;
+                if ((shiftint + n) > 122)
+                    shiftint -= 26;
+                n += shiftint;
                 cout << n;
             }
 // else just print the char
