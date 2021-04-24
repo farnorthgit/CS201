@@ -123,6 +123,9 @@ void RGBImage::toASCII() {
 void RGBImage::writePGMFile(string outputfilename) {
     ofstream fout(outputfilename);
 // CYCLE THRU IMAGE VECTOR, CONVERT TO PGM, OUTPUT TO FILE
+    fout << "P2" << endl;
+    fout << _xres  << " " << _yres << endl;
+    fout << _maxval << endl;
     int counter = 0;
     int iy;
     double y;
