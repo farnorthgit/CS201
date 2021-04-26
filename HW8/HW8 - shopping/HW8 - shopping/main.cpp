@@ -57,7 +57,7 @@ void addToCart (map<string, Record> &localinv, map<string, Record> &localcart) {
     string itemtoadd;
     while (true) {
         cout << "Which item would you like to add? ";
-        cin >> itemtoadd;
+        getline (cin, itemtoadd);
         if (localinv.count(itemtoadd) == 1) break;
         cout << "Item does not exist in inventory.  Chose a different item." << endl;
     }
@@ -90,7 +90,7 @@ void removeFromCart (map<string, Record> &localinv, map<string, Record> &localca
     string itemtoremove;
     while (nonemptycart) {
         cout << "Which item would you like to remove? ";
-        cin >> itemtoremove;
+        getline (cin, itemtoremove);
         if (localcart.count(itemtoremove) != 1)
             cout << "Item does not exist in shopping cart.  Chose a different item." << endl;
         else if (localcart.at(itemtoremove).units == 0)
