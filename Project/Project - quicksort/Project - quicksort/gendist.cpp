@@ -27,8 +27,6 @@ void generateuniform(vector<int> &vv, int size) {
     }
 }
 
-
-
 // generate a rand distribution between 0 and 1000
 void generaterand(vector<int> &vv, int size) {
     for (int n = 0; n < size; n++) {

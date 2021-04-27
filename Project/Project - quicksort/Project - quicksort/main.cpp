@@ -20,7 +20,7 @@ using std::accumulate;
 #include "sortalgorithms.hpp"
 
 // function to check whether my sort was correct
-void checkCorrectSort(const vector<int> v) {
+void checkCorrectSort(const vector<int> &v) {
     vector<int> vcheck = v;
     sort(vcheck.begin(), vcheck.end());
     if (!equal(v.begin(), v.end(), vcheck.begin()))
